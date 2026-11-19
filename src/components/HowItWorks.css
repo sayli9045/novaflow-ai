@@ -1,0 +1,261 @@
+
+/* ========================================
+   HOW IT WORKS SECTION
+======================================== */
+
+.how-section {
+  position: relative;
+  padding: 100px 0;
+  background: #0b1422;
+  border-top: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+/* Section Heading */
+
+.how-heading {
+  max-width: 650px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.how-heading h2 {
+  font-family: var(--font-heading);
+  color: var(--color-heading);
+  font-size: clamp(35px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -1.8px;
+}
+
+.how-heading h2 span {
+  color: var(--color-primary);
+}
+
+.how-heading p {
+  max-width: 530px;
+  margin: 18px auto 0;
+  color: var(--color-text);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* ========================================
+   STEPS GRID
+======================================== */
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+/* Step Card */
+
+.step-card {
+  position: relative;
+  min-height: 365px;
+  display: flex;
+  flex-direction: column;
+  padding: 27px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: linear-gradient(
+    145deg,
+    #18283a,
+    #111e2e
+  );
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-7px);
+  border-color: rgba(165, 243, 208, 0.4);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Step Header */
+
+.step-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.step-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: rgba(165, 243, 208, 0.1);
+  color: var(--color-primary);
+}
+
+.step-number {
+  color: #8296aa;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Step Content */
+
+.step-card h3 {
+  margin-top: 30px;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.step-description {
+  margin-top: 13px;
+  color: var(--color-text);
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+/* Step Points */
+
+.step-points {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin: 23px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step-points li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #c1cedb;
+  font-size: 12px;
+}
+
+.step-points li svg {
+  flex-shrink: 0;
+  color: var(--color-primary);
+}
+
+/* Step Footer */
+
+.step-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 25px;
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.step-footer svg {
+  transition: transform 0.25s ease;
+}
+
+.step-card:hover .step-footer svg {
+  transform: translateX(5px);
+}
+
+/* ========================================
+   BOTTOM MESSAGE
+======================================== */
+
+.how-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 45px;
+  padding: 19px;
+  border: 1px solid rgba(165, 243, 208, 0.15);
+  border-radius: 12px;
+  background: rgba(165, 243, 208, 0.05);
+}
+
+.how-bottom-icon {
+  display: flex;
+  color: var(--color-primary);
+}
+
+.how-bottom p {
+  color: var(--color-heading);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ========================================
+   TABLET RESPONSIVENESS
+======================================== */
+
+@media (max-width: 1024px) {
+  .steps-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .step-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ========================================
+   MOBILE RESPONSIVENESS
+======================================== */
+
+@media (max-width: 600px) {
+  .how-section {
+    padding: 70px 0;
+  }
+
+  .how-heading {
+    margin-bottom: 38px;
+  }
+
+  .how-heading h2 {
+    font-size: 34px;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .step-card {
+    min-height: 330px;
+    padding: 23px;
+  }
+
+  .step-card:last-child {
+    grid-column: auto;
+  }
+
+  .how-bottom {
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .how-bottom p {
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 360px) {
+  .step-card {
+    padding: 19px;
+  }
+
+  .step-card h3 {
+    font-size: 17px;
+  }
+
+  .step-description {
+    font-size: 12px;
+  }
+}

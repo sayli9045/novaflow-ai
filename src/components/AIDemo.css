@@ -1,0 +1,548 @@
+
+/* ========================================
+   AI DEMO SECTION
+======================================== */
+
+.ai-demo-section {
+  position: relative;
+  padding: 100px 0;
+  background: #101b2b;
+  border-top: 1px solid var(--color-border);
+  overflow: hidden;
+}
+
+/* ========================================
+   SECTION HEADING
+======================================== */
+
+.ai-demo-heading {
+  max-width: 650px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.ai-demo-heading h2 {
+  font-family: var(--font-heading);
+  color: var(--color-heading);
+  font-size: clamp(35px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -1.8px;
+}
+
+.ai-demo-heading h2 span {
+  color: var(--color-primary);
+}
+
+.ai-demo-heading p {
+  max-width: 530px;
+  margin: 18px auto 0;
+  color: var(--color-text);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* ========================================
+   PLANNER CONTAINER
+======================================== */
+
+.planner-container {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+/* ========================================
+   INPUT PANEL
+======================================== */
+
+.planner-input-panel,
+.planner-results-panel {
+  padding: 28px;
+  border: 1px solid var(--color-border);
+  border-radius: 17px;
+  background: linear-gradient(
+    145deg,
+    #18283a,
+    #111e2e
+  );
+}
+
+.planner-panel-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 30px;
+}
+
+.planner-heading-icon,
+.results-icon {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 11px;
+  background: rgba(165, 243, 208, 0.1);
+  color: var(--color-primary);
+}
+
+.planner-panel-heading h3 {
+  color: var(--color-heading);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.planner-panel-heading p {
+  margin-top: 5px;
+  color: var(--color-text);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Input Field */
+
+.planner-input-panel label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--color-heading);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.planner-input-panel textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 15px;
+  resize: vertical;
+  outline: none;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: #0d1928;
+  color: var(--color-heading);
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.7;
+  transition: border-color 0.2s ease;
+}
+
+.planner-input-panel textarea::placeholder {
+  color: #78899e;
+}
+
+.planner-input-panel textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(165, 243, 208, 0.08);
+}
+
+.input-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 9px;
+  color: #8190a2;
+  font-size: 10px;
+}
+
+/* Validation */
+
+.planner-error {
+  margin-top: 12px;
+  color: #fca5a5;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Generate Button */
+
+.generate-btn {
+  width: 100%;
+  min-height: 49px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 9px;
+  background: var(--color-primary);
+  color: #10271f;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.generate-btn:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+.generate-btn:focus-visible,
+.reset-btn:focus-visible,
+.task-toggle:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+.planner-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 19px;
+  color: var(--color-text);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.planner-note svg {
+  flex-shrink: 0;
+  color: var(--color-primary);
+}
+
+/* ========================================
+   RESULTS PANEL
+======================================== */
+
+.planner-results-panel {
+  min-height: 440px;
+}
+
+.results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 23px;
+}
+
+.results-label {
+  color: var(--color-primary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.results-header h3 {
+  margin-top: 7px;
+  color: var(--color-heading);
+  font-size: 20px;
+}
+
+.planner-empty {
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  text-align: center;
+}
+
+.empty-icon {
+  width: 65px;
+  height: 65px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: rgba(165, 243, 208, 0.09);
+  color: var(--color-primary);
+}
+
+.planner-empty h4 {
+  margin-top: 20px;
+  color: var(--color-heading);
+  font-size: 16px;
+}
+
+.planner-empty p {
+  max-width: 290px;
+  margin-top: 9px;
+  color: var(--color-text);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* ========================================
+   GENERATED GOAL
+======================================== */
+
+.goal-summary {
+  padding: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.goal-summary span {
+  color: var(--color-primary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.goal-summary p {
+  margin-top: 7px;
+  color: var(--color-heading);
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+/* ========================================
+   PROGRESS BAR
+======================================== */
+
+.planner-progress {
+  margin-top: 23px;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-text);
+  font-size: 12px;
+}
+
+.progress-info strong {
+  color: var(--color-primary);
+  font-size: 15px;
+}
+
+.planner-progress-track {
+  width: 100%;
+  height: 9px;
+  margin-top: 12px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #29394a;
+}
+
+.planner-progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    #70dcb0,
+    #b7f5da
+  );
+  transition: width 0.3s ease;
+}
+
+.progress-caption {
+  margin-top: 8px;
+  color: var(--color-text);
+  font-size: 11px;
+}
+
+/* ========================================
+   GENERATED TASKS
+======================================== */
+
+.generated-task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-top: 24px;
+}
+
+.generated-task {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.025);
+  transition: border-color 0.2s ease;
+}
+
+.generated-task:hover {
+  border-color: rgba(165, 243, 208, 0.35);
+}
+
+.task-toggle {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  padding: 0;
+  margin-top: 2px;
+  border: none;
+  background: transparent;
+  color: #8296aa;
+  cursor: pointer;
+}
+
+.task-done .task-toggle {
+  color: var(--color-primary);
+}
+
+.generated-task-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.generated-task-content h4 {
+  color: var(--color-heading);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.generated-task-content p {
+  margin-top: 5px;
+  color: var(--color-text);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.task-done .generated-task-content h4 {
+  color: #91a1b1;
+  text-decoration: line-through;
+}
+
+.task-duration {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  color: var(--color-text);
+  font-size: 10px;
+}
+
+/* ========================================
+   COMPLETION MESSAGE
+======================================== */
+
+.completion-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 17px;
+  padding: 13px;
+  border: 1px solid rgba(165, 243, 208, 0.2);
+  border-radius: 9px;
+  background: rgba(165, 243, 208, 0.07);
+  color: var(--color-primary);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.completion-message svg {
+  flex-shrink: 0;
+}
+
+/* ========================================
+   RESET BUTTON
+======================================== */
+
+.reset-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reset-btn:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+/* ========================================
+   DISCLAIMER
+======================================== */
+
+.demo-disclaimer {
+  margin-top: 23px;
+  color: #8190a2;
+  font-size: 11px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* ========================================
+   TABLET RESPONSIVENESS
+======================================== */
+
+@media (max-width: 900px) {
+  .planner-container {
+    grid-template-columns: 1fr;
+  }
+
+  .planner-results-panel {
+    min-height: 400px;
+  }
+}
+
+/* ========================================
+   MOBILE RESPONSIVENESS
+======================================== */
+
+@media (max-width: 600px) {
+  .ai-demo-section {
+    padding: 70px 0;
+  }
+
+  .ai-demo-heading {
+    margin-bottom: 38px;
+  }
+
+  .ai-demo-heading h2 {
+    font-size: 34px;
+  }
+
+  .planner-input-panel,
+  .planner-results-panel {
+    padding: 19px;
+  }
+
+  .planner-panel-heading h3 {
+    font-size: 14px;
+  }
+
+  .planner-empty {
+    min-height: 260px;
+  }
+
+  .generated-task {
+    gap: 8px;
+    padding: 11px;
+  }
+
+  .task-duration {
+    font-size: 9px;
+  }
+
+  .input-footer {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 360px) {
+  .planner-input-panel,
+  .planner-results-panel {
+    padding: 15px;
+  }
+
+  .generated-task-content h4 {
+    font-size: 11px;
+  }
+
+  .task-duration {
+    gap: 3px;
+  }
+}

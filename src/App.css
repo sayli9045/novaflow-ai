@@ -1,0 +1,52 @@
+
+/* Main Application Layout */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body {
+  padding-top: 78px;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Shared Section Settings */
+
+main > section {
+  width: 100%;
+}
+
+/* Smooth Scrolling */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+/* Mobile Adjustments */
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px;
+  }
+
+  html {
+    scroll-padding-top: 80px;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  main > section {
+    width: 100%;
+  }
+}
