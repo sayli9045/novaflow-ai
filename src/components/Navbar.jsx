@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { ArrowRight, Menu, X, Sparkles } from 'lucide-react';
+import { Menu, X, Sparkles } from 'lucide-react';
 import './Navbar.css';
 
 function Navbar() {
@@ -32,7 +32,7 @@ function Navbar() {
           </a>
 
           <a href="#features" onClick={closeMenu}>
-             Features
+            Features
           </a>
 
           <a href="#how-it-works" onClick={closeMenu}>
@@ -42,6 +42,7 @@ function Navbar() {
           <a href="#pricing" onClick={closeMenu}>
             Pricing
           </a>
+
           <a href="#testimonials" onClick={closeMenu}>
             Testimonials
           </a>
@@ -49,21 +50,7 @@ function Navbar() {
           <a href="#faq" onClick={closeMenu}>
             FAQ
           </a>
-
-          {/* Mobile CTA */}
-          <a
-            href="#ai-demo"
-            className="mobile-cta"
-            onClick={closeMenu}
-          >
-            Get Started <ArrowRight size={17} />
-          </a>
         </nav>
-
-        {/* Desktop CTA */}
-        <a href="#ai-demo" className="navbar-cta">
-          Get Started <ArrowRight size={17} />
-        </a>
 
         {/* Mobile Menu Button */}
         <button

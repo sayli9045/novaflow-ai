@@ -24,13 +24,12 @@ function Hero() {
             <span>AI-POWERED PRODUCTIVITY WORKSPACE</span>
           </div>
 
-        <h1>
-           <span className="heading-line">Less chaos.</span>
-           <span className="heading-line">
-          More <span className="highlight-text">momentum.</span>
-           </span>
-        </h1>
- 
+          <h1>
+            <span className="heading-line">Less chaos.</span>
+            <span className="heading-line">
+              More <span className="highlight-text">momentum.</span>
+            </span>
+          </h1>
 
           <p className="hero-description">
             Turn your goals into action with an intelligent
@@ -38,16 +37,21 @@ function Hero() {
             and make meaningful progress every day.
           </p>
 
+          {/* Hero Action Buttons */}
           <div className="hero-actions">
-            <a href="#get-started" className="hero-primary-btn">
+
+            {/* Explore NovaFlow: Navigates to AI Demo */}
+            <a href="#ai-demo" className="hero-primary-btn">
               Explore NovaFlow
               <ArrowRight size={18} />
             </a>
 
+            {/* See How It Works: Navigates to workflow section */}
             <a href="#how-it-works" className="hero-secondary-btn">
               <Play size={17} />
               See how it works
             </a>
+
           </div>
 
           <div className="hero-trust">
@@ -72,7 +76,7 @@ function Hero() {
               </div>
 
               <span className="dashboard-more" aria-hidden="true">
-              <MoreHorizontal size={22} />
+                <MoreHorizontal size={22} />
               </span>
             </div>
 
@@ -146,6 +150,7 @@ function Hero() {
               </div>
             </div>
 
+            {/* AI Insight */}
             <div className="ai-insight">
               <Sparkles size={18} />
               <div>
